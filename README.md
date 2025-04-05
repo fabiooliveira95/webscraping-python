@@ -13,10 +13,12 @@ Repositório dedicado ao estudo e prática de **Web Scraping com Python**, focad
 ---
 
 ## 📁 Estrutura do Projeto
-
-webscraping-python/ ├── src/ # Códigos-fonte (scripts de scraping) ├── data/ # Dados coletados (CSV, JSON, etc.) ├── notebooks/ # Jupyter Notebooks para análise └── requirements.txt # Dependências do projeto
-
-
+```texto
+webscraping-python/ ├── src/ # Códigos-fonte (scripts de scraping)
+├── data/ # Dados coletados (CSV, JSON, etc.)
+├── notebooks/ # Jupyter Notebooks para análise
+└── requirements.txt # Dependências do projeto
+```
 ---
 
 ## ⚙️ Como Usar
@@ -25,7 +27,6 @@ webscraping-python/ ├── src/ # Códigos-fonte (scripts de scraping) ├─
 ```bash
    git clone https://github.com/fabiooliveira95/webscraping-python.git
 ```
-
 2.Acesse a pasta do projeto:
 ```bash
    cd webscraping-python.git
@@ -35,7 +36,6 @@ webscraping-python/ ├── src/ # Códigos-fonte (scripts de scraping) ├─
 ```bash
    pip install -r requirements.txt
 ```
-
 🧰 Ferramentas Utilizadas
 
 Python 3+
@@ -45,41 +45,38 @@ pandas – Manipulação e exportação de dados
 
 💡 Exemplos de Uso
 1. Extraindo Títulos de Notícias (BeautifulSoup)
+python
+```texto
+   from bs4 import BeautifulSoup
+   import requests
 
-   python
+   url = "http://en.wikipedia.org/wiki/Kevin_Bacon"
+   response = requests.get(url)
+   soup = BeautifulSoup(response.text, 'html.parser')
 
-       from bs4 import BeautifulSoup
-       import requests
-
-       url = "http://en.wikipedia.org/wiki/Kevin_Bacon"
-       response = requests.get(url)
-       soup = BeautifulSoup(response.text, 'html.parser')
-
-       for tag in soup.find_all('h2'):
-       print(tag.text.strip())
+   for tag in soup.find_all('h2'):
+   print(tag.text.strip())
+```
    
 3. Salvando Dados em CSV (pandas)
-
    python
+```texto
+   import pandas as pd
 
-       import pandas as pd
-
-       dados = {'Produto': ['Item A', 'Item B'], 'Preço': [99.90, 149.90]}
-       df = pd.DataFrame(dados)
-       df.to_csv('data/precos.csv', index=False)
+   dados = {'Produto': ['Item A', 'Item B'], 'Preço': [99.90, 149.90]}
+   df = pd.DataFrame(dados)
+   df.to_csv('data/precos.csv', index=False)
+```
 
 📌 Resultados
-
 O código acima imprime cabeçalhos da página da Wikipédia. É possível adaptar os seletores ``( find, find_all)``
 para capturar qualquer tipo de conteúdo (tabelas, links, imagens, etc.). 
 
 📜 Licença
-
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 
 ## 📬 Contato
-
 * Fábio Oliveira
 * 🔗 [LinkedIn](https://www.linkedin.com/in/fabio-oliveira-araujo-cientista/)
 * 📧 fabiooliveira0067@gmail.com

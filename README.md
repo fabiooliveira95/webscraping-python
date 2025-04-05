@@ -44,22 +44,21 @@ requests – Requisições HTTP
 pandas – Manipulação e exportação de dados 
 
 💡 Exemplos de Uso
-1. Extraindo Títulos de Notícias (BeautifulSoup)
+1.Extraindo Títulos de Notícias (BeautifulSoup)
 * python
+```texyto
+   from bs4 import BeautifulSoup
+   import requests
 
-      from bs4 import BeautifulSoup
-      import requests
+   url = "http://en.wikipedia.org/wiki/Kevin_Bacon"
+   response = requests.get(url)
+   soup = BeautifulSoup(response.text, 'html.parser')
 
-      url = "http://en.wikipedia.org/wiki/Kevin_Bacon"
-      response = requests.get(url)
-      soup = BeautifulSoup(response.text, 'html.parser')
-
-      for tag in soup.find_all('h2')
-      print(tag.text.strip())
-
-   
-3. Salvando Dados em CSV (pandas)
-   python
+   for tag in soup.find_all('h2')
+   print(tag.text.strip())
+```
+3.Salvando Dados em CSV (pandas)
+* python
 ```texto
    import pandas as pd
 

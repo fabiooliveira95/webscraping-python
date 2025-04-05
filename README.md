@@ -28,7 +28,7 @@ webscraping-python/ ├── src/ # Códigos-fonte (scripts de scraping) ├─
 
 2.Acesse a pasta do projeto:
 ```bash
-cd webscraping-python.git
+   cd webscraping-python.git
 ```
 
 3.Instale as dependências 

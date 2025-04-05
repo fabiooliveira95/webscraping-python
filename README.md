@@ -45,18 +45,18 @@ pandas – Manipulação e exportação de dados
 
 💡 Exemplos de Uso
 1. Extraindo Títulos de Notícias (BeautifulSoup)
-python
-```texto
-   from bs4 import BeautifulSoup
-   import requests
+* python
 
-   url = "http://en.wikipedia.org/wiki/Kevin_Bacon"
-   response = requests.get(url)
-   soup = BeautifulSoup(response.text, 'html.parser')
+      from bs4 import BeautifulSoup
+      import requests
 
-   for tag in soup.find_all('h2'):
-   print(tag.text.strip())
-```
+      url = "http://en.wikipedia.org/wiki/Kevin_Bacon"
+      response = requests.get(url)
+      soup = BeautifulSoup(response.text, 'html.parser')
+
+      for tag in soup.find_all('h2')
+      print(tag.text.strip())
+
    
 3. Salvando Dados em CSV (pandas)
    python

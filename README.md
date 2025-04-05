@@ -21,7 +21,7 @@ webscraping-python/ ├── src/ # Códigos-fonte (scripts de scraping) ├─
 
 ## ⚙️ Como Usar
 
-1. **Clone o repositório**
+1.Clone o repositório
 ```bash
    git clone https://github.com/fabiooliveira95/webscraping-python.git
 ```

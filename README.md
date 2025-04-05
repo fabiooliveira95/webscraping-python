@@ -1,60 +1,73 @@
-Web Scraping com BeautifulSoup
+# 🕷️ Web Scraping em Python
 
-Este projeto demonstra como realizar web scraping em páginas da Wikipédia utilizando a biblioteca BeautifulSoup e o módulo urllib em Python. O código busca links dentro de uma página da Wikipédia e imprime aqueles que seguem um padrão específico.
+Repositório dedicado ao estudo e prática de **Web Scraping** usando Python, com foco em coleta, limpeza e análise de dados de diversas fontes na web.
 
-Requisitos
+## 🚀 Objetivo
+Este projeto tem como objetivo:
+- Coletar dados estruturados de websites públicos.
+- Automatizar a extração de informações (ex.: preços, notícias, métricas).
+- Servir como base para estudos em **Python**, **Web Scraping** e **Análise de Dados**.
 
-Certifique-se de ter o Python instalado em seu sistema. Para instalar a biblioteca BeautifulSoup, execute:
+## 📦 Estrutura do Projeto
 
-pip install beautifulsoup4
+webscraping-python/
+├── src/ # Códigos-fonte (scripts de scraping)
+├── data/ # Dados coletados (CSV, JSON, etc.)
+├── notebooks/ # Jupyter Notebooks para análise
+└── requirements.txt # Dependências do projeto
 
-Como o Código Funciona
 
-Importação dos módulos necessários:
+## ⚙️ Configuração
+1. **Clone o repositório**:
 
-from urllib.request import urlopen
-from bs4 import BeautifulSoup
-import re
+       bash
+       git clone https://github.com/fabiooliveira95/webscraping-python.git
+       cd webscraping-python
 
-A página de exemplo é carregada:
+2.Instale as dependências:
+     
+       bash
+       pip install -r requirements.txt
 
-html = urlopen('http://en.wikipedia.org/wiki/Kevin_Bacon')
-bs = BeautifulSoup(html, 'html.parser')
+🛠️ Ferramentas Utilizadas
 
-Busca de links gerais:
+Python 3+
+Bibliotecas:
+BeautifulSoup - Parsing de HTML/XML.
+requests - Requisições HTTP.
+pandas - Manipulação de dados.
 
-for link in bs.find_all('a'):
-    if 'href' in link.attrs:
-        print(link.attrs['href'])
+📌 Exemplos de Uso
+Extraindo Títulos de Notícias (BeautifulSoup)
 
-Este trecho captura todos os links na página.
+    python
+    from bs4 import BeautifulSoup
+    import requests
 
-Busca de links dentro de um conteúdo específico:
+    url = "http://en.wikipedia.org/wiki/kevin_Bacon"
+    response = requests.get(url)
+    soup = BeautifulSoup(response.text, 'html.parser')
 
-for link in bs.find('div', {'id': 'bodyContent'}).find_all(
-    'a', href=re.compile('^(/wiki/)((?!:).)*?')):
-    if 'href' in link.attrs:
-        print(link.attrs['href'])
+    for titulo in soup.find_all('h2', class_='kevin_Bacon'):
+    print(link.attrs['href'])
 
-Aqui, capturamos apenas links da página que começam com /wiki/, excluindo links externos e de categorias especiais.
+Salvando Dados em CSV (Pandas)
+     
+    python
+    import pandas as pd
+    
+    dados = {'Produto': ['Item A', 'Item B'], 'Preço': [99.90, 149.90]}
+    df = pd.DataFrame(dados)
+    df.to_csv('data/precos.csv', index=False)
 
-Saída Esperada
+📊 Resultados
+  Aqui, capturamos apenas links da página que começam com /wiki/, excluindo links externos e de categorias especiais.
+  Saída Esperada
+  O código imprime URLs que apontam para outras páginas da Wikipédia. Alguns exemplos possíveis:
+  /wiki/Kevin_Bacon_filmography  
+  /wiki/Hollywood_Walk_of_Fame
+ /wiki/American_actor
 
-O código imprime URLs que apontam para outras páginas da Wikipédia. Alguns exemplos possíveis:
+📜 Licença
 
-/wiki/Kevin_Bacon_filmography
-/wiki/Hollywood_Walk_of_Fame
-/wiki/American_actor
-
-Possíveis Melhorias
-
-Tratamento de Erros: Adicionar blocos try-except para lidar com problemas de conexão ou páginas inacessíveis.
-
-Filtragem Avançada: Refinar a busca para excluir links irrelevantes.
-
-Exportação: Salvar os links em um arquivo CSV.
-
-Aviso Legal
-
-Este projeto foi criado para fins educacionais. Certifique-se de seguir os Termos de Uso da Wikipédia e de qualquer site ao realizar web scraping.
-
+ ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)

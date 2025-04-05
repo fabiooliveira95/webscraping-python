@@ -25,7 +25,6 @@ webscraping-python/ ├── src/ # Códigos-fonte (scripts de scraping) ├─
 
 ```bash
    git clone https://github.com/fabiooliveira95/webscraping-python.git
-   cd webscraping-python
 ```
 
 2.Instale as dependências 
@@ -43,7 +42,7 @@ pandas – Manipulação e exportação de dados
 💡 Exemplos de Uso
 1. Extraindo Títulos de Notícias (BeautifulSoup)
 
-       python
+   python
 
        from bs4 import BeautifulSoup
        import requests
@@ -57,7 +56,8 @@ pandas – Manipulação e exportação de dados
    
 3. Salvando Dados em CSV (pandas)
 
-       python
+   python
+
        import pandas as pd
 
        dados = {'Produto': ['Item A', 'Item B'], 'Preço': [99.90, 149.90]}

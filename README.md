@@ -38,7 +38,7 @@ webscraping-python/ ├── src/ # Códigos-fonte (scripts de scraping)
 ```
 🧰 Ferramentas Utilizadas
 
-Python 3+
+Python 3
 BeautifulSoup – Análise de HTML/XML
 requests – Requisições HTTP
 pandas – Manipulação e exportação de dados 

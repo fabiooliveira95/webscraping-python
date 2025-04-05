@@ -23,15 +23,16 @@ webscraping-python/ ├── src/ # Códigos-fonte (scripts de scraping) ├─
 
 1. **Clone o repositório**
 
-       bash
-       git clone https://github.com/fabiooliveira95/webscraping-python.git
-       cd webscraping-python
+```bash
+   git clone https://github.com/fabiooliveira95/webscraping-python.git
+   cd webscraping-python
+```
 
 2.Instale as dependências 
    
-    bash
-    pip install -r requirements.txt
-
+```bash
+   pip install -r requirements.txt
+```
 🧰 Ferramentas Utilizadas
 
 Python 3+

@@ -71,3 +71,9 @@ Salvando Dados em CSV (Pandas)
 📜 Licença
 
  ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+
+ ## 📬 Contato
+
+Fábio Oliveira
+🔗 [LinkedIn](https://www.linkedin.com/in/fabio-oliveira-araujo-cientista/)
+📧 fabiooliveira0067@gmail.com

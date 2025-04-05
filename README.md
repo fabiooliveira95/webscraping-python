@@ -1,79 +1,80 @@
-# 🕷️ Web Scraping em Python
+# 🕸️ Web Scraping em Python
 
-Repositório dedicado ao estudo e prática de **Web Scraping** usando Python, com foco em coleta, limpeza e análise de dados de diversas fontes na web.
+Repositório dedicado ao estudo e prática de **Web Scraping com Python**, focado em coleta, limpeza e análise de dados obtidos de websites públicos.
 
-## 🚀 Objetivo
-Este projeto tem como objetivo:
-- Coletar dados estruturados de websites públicos.
-- Automatizar a extração de informações (ex.: preços, notícias, métricas).
-- Servir como base para estudos em **Python**, **Web Scraping** e **Análise de Dados**.
+---
 
-## 📦 Estrutura do Projeto
+## 🎯 Objetivos
 
-webscraping-python/
-├── src/ # Códigos-fonte (scripts de scraping)
-├── data/ # Dados coletados (CSV, JSON, etc.)
-├── notebooks/ # Jupyter Notebooks para análise
-└── requirements.txt # Dependências do projeto
+- Coletar dados estruturados de sites públicos.
+- Automatizar a extração de informações (ex: preços, notícias, métricas).
+- Servir como base de estudo em Python, Web Scraping e Análise de Dados.
+
+---
+
+## 📁 Estrutura do Projeto
+
+webscraping-python/ ├── src/ # Códigos-fonte (scripts de scraping) ├── data/ # Dados coletados (CSV, JSON, etc.) ├── notebooks/ # Jupyter Notebooks para análise └── requirements.txt # Dependências do projeto
 
 
-## ⚙️ Configuração
-1. **Clone o repositório**:
+---
+
+## ⚙️ Como Usar
+
+1. **Clone o repositório**
 
        bash
        git clone https://github.com/fabiooliveira95/webscraping-python.git
        cd webscraping-python
 
-2.Instale as dependências:
-     
-       bash
-       pip install -r requirements.txt
+2.Instale as dependências 
+   
+    bash
+    pip install -r requirements.txt
 
-🛠️ Ferramentas Utilizadas
+🧰 Ferramentas Utilizadas
 
 Python 3+
-Bibliotecas:
-BeautifulSoup - Parsing de HTML/XML.
-requests - Requisições HTTP.
-pandas - Manipulação de dados.
+BeautifulSoup – Análise de HTML/XML
+requests – Requisições HTTP
+pandas – Manipulação e exportação de dados 
 
-📌 Exemplos de Uso
-Extraindo Títulos de Notícias (BeautifulSoup)
+💡 Exemplos de Uso
+1. Extraindo Títulos de Notícias (BeautifulSoup)
 
-    python
-    from bs4 import BeautifulSoup
-    import requests
+       python
 
-    url = "http://en.wikipedia.org/wiki/kevin_Bacon"
-    response = requests.get(url)
-    soup = BeautifulSoup(response.text, 'html.parser')
+       from bs4 import BeautifulSoup
+       import requests
 
-    for titulo in soup.find_all('h2', class_='kevin_Bacon'):
-    print(link.attrs['href'])
+       url = "http://en.wikipedia.org/wiki/Kevin_Bacon"
+       response = requests.get(url)
+       soup = BeautifulSoup(response.text, 'html.parser')
 
-Salvando Dados em CSV (Pandas)
-     
-    python
-    import pandas as pd
-    
-    dados = {'Produto': ['Item A', 'Item B'], 'Preço': [99.90, 149.90]}
-    df = pd.DataFrame(dados)
-    df.to_csv('data/precos.csv', index=False)
+       for tag in soup.find_all('h2'):
+       print(tag.text.strip())
+   
+3. Salvando Dados em CSV (pandas)
 
-📊 Resultados
-  Aqui, capturamos apenas links da página que começam com /wiki/, excluindo links externos e de categorias especiais.
-  Saída Esperada
-  O código imprime URLs que apontam para outras páginas da Wikipédia. Alguns exemplos possíveis:
-  /wiki/Kevin_Bacon_filmography  
-  /wiki/Hollywood_Walk_of_Fame
- /wiki/American_actor
+       python
+       import pandas as pd
+
+       dados = {'Produto': ['Item A', 'Item B'], 'Preço': [99.90, 149.90]}
+       df = pd.DataFrame(dados)
+       df.to_csv('data/precos.csv', index=False)
+
+📌 Resultados
+
+O código acima imprime cabeçalhos da página da Wikipédia. É possível adaptar os seletores ``( find, find_all)``
+para capturar qualquer tipo de conteúdo (tabelas, links, imagens, etc.). 
 
 📜 Licença
 
- ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
- ## 📬 Contato
 
-Fábio Oliveira
-🔗 [LinkedIn](https://www.linkedin.com/in/fabio-oliveira-araujo-cientista/)
-📧 fabiooliveira0067@gmail.com
+## 📬 Contato
+
+* Fábio Oliveira
+* 🔗 [LinkedIn](https://www.linkedin.com/in/fabio-oliveira-araujo-cientista/)
+* 📧 fabiooliveira0067@gmail.com
